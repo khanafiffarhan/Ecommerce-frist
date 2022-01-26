@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Axios from 'axios';
 
 const AddProduct = () => {
 
@@ -9,7 +10,7 @@ const AddProduct = () => {
   const [prise, setPrise] = useState('');
   const [slug, setSlug] = useState('');
 
-  function addproduct() {
+  const addproduct = ()=> {
     var product = {
       id: id,
       imgsrc: imgsrc,
@@ -18,11 +19,13 @@ const AddProduct = () => {
       prise: prise,
       slug: slug
     }
+    Axios.post("http://localhost:5000/addproduct", product)
     console.log(product)
 
   }
+  
   return <div className='wrap_container'>
-    <form>
+    <div>
       <input type="number" placeholder='id' onChange={(e) => { setId(e.target.value) }} />
       <input type="text" placeholder='imgsrc' onChange={(e) => { setImgsrc(e.target.value) }} />
       <input type="text" placeholder='title' onChange={(e) => { setTitle(e.target.value) }} />
@@ -30,8 +33,8 @@ const AddProduct = () => {
       <input type="number" placeholder='price' onChange={(e) => { setPrise(e.target.value) }} />
       <input type="text" placeholder='slug' onChange={(e) => { setSlug(e.target.value) }} />
 
-      <button onClick={addproduct} className="btn btn-success">Add Post</button>
-    </form>
+      <button onClick={addproduct} className="hello">Add Post</button>
+    </div>
   </div>;
 };
 

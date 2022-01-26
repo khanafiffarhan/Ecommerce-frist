@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon  backend/server.js",
+    "start": "node backend/server.mjs",
+    "server": "nodemon  backend/server.mjs",
     "client": "npm start --prefix frontend"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/khanafiffarhan/Ecommerce-frist#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
     "mongoose": "^6.1.7",

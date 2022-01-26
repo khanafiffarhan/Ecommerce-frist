@@ -1,21 +1,31 @@
 // require("dotenv").config();
 import dotenv from "dotenv";
+import express from "express";
+import cors from 'cors'
 import connectDB from "./config/db.mjs";
 import ProductModel from './models/Product.mjs'
 dotenv.config();
 
 connectDB();
-
-import express from "express";
 const app = express();
-app.get("/", async (req, res)=>{
+
+app.use(express.json());
+app.use(cors());
+
+app.post("/addproduct", async (req, res)=>{
+    const id = req.body.id;
+    const imgsrc = req.body.imgsrc;
+    const title = req.body.title;
+    const detail = req.body.detail;
+    const prise = req.body.prise;
+    const slug = req.body.slug
     const product = new ProductModel({
-        id: 1,
-        imgsrc:"https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2022/1/11/6b4c7e8d-d78d-4232-80b5-f49b2c7ebdb61641884921424-RTF-Winterwear_M_H_Here_NoW.jpg",
-        title: "this is pant",
-        detail:"This is very nice pant",
-        prise: 300,
-        slug: "a"
+        id: id,
+        imgsrc:imgsrc,
+        title: title,
+        detail:detail,
+        prise: prise,
+        slug: slug
 
     });
     try{
