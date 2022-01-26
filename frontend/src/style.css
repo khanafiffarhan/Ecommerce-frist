@@ -98,4 +98,7 @@ img{
     background-color: thistle;
     transition: 0.5s;
 }
-
+.wrap_container{
+    padding-top: 100px;
+    
+}

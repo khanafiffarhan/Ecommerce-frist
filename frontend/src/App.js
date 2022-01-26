@@ -6,6 +6,7 @@ import Productscreen from './pages/Productscreen';
 import CartPage from './pages/CartPage';
 import data from './data';
 import './style.css'
+import AddProduct from './CRUD/AddProduct';
 
 
 
@@ -48,6 +49,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/product/:slug" element={<Productscreen addToCart={addToCart} />} />
                 <Route path="/cart" element={<CartPage carts={cartArray} dltCartItem={dltCartItem} />} />
+                <Route path="/addproduct" element={<AddProduct />} />
             </Routes>
             
             
