@@ -35,5 +35,14 @@ app.post("/addproduct", async (req, res)=>{
         console.log(error);
     }
 })
+app.get("/readproduct", async (req, res)=>{
+    ProductModel.find({}, (err, result)=>{
+        if(err){
+            res.send(err)
+        }
+        res.send(result);
+        
+    })
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Our server running on ${PORT}`));

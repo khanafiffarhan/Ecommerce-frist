@@ -7,6 +7,7 @@ import CartPage from './pages/CartPage';
 import data from './data';
 import './style.css'
 import AddProduct from './CRUD/AddProduct';
+import AllProducts from './CRUD/AllProducts';
 
 
 
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="/product/:slug" element={<Productscreen addToCart={addToCart} />} />
                 <Route path="/cart" element={<CartPage carts={cartArray} dltCartItem={dltCartItem} />} />
                 <Route path="/addproduct" element={<AddProduct />} />
+                <Route path="/readproduct" element={<AllProducts />} />
             </Routes>
             
             
