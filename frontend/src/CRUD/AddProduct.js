@@ -3,7 +3,7 @@ import Axios from 'axios';
 
 const AddProduct = () => {
 
-  const [id, setId] = useState('');
+  // const [id, setId] = useState('');
   const [imgsrc, setImgsrc] = useState('');
   const [title, setTitle] = useState('');
   const [detail, setDetail] = useState('');
@@ -12,7 +12,7 @@ const AddProduct = () => {
 
   const addproduct = ()=> {
     var product = {
-      id: id,
+      // idd: id,
       imgsrc: imgsrc,
       title: title,
       detail: detail,
@@ -26,7 +26,7 @@ const AddProduct = () => {
   
   return <div className='wrap_container'>
     <div>
-      <input type="number" placeholder='id' onChange={(e) => { setId(e.target.value) }} />
+      {/* <input type="number" placeholder='id' onChange={(e) => { setId(e.target.value) }} /> */}
       <input type="text" placeholder='imgsrc' onChange={(e) => { setImgsrc(e.target.value) }} />
       <input type="text" placeholder='title' onChange={(e) => { setTitle(e.target.value) }} />
       <input type="text" placeholder='detail' onChange={(e) => { setDetail(e.target.value) }} />
